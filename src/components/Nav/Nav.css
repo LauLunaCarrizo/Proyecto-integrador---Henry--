@@ -1,0 +1,19 @@
+.SearchBar{
+    background-color: rgb(51, 61, 197);
+    padding-bottom: 14px;   
+    padding-top: 14px;
+    border-color: black;
+    border-style: groove;
+}
+
+.Agregar{
+    font-size: medium;
+    background-color: #C38EB4;
+}
+
+.nombre{
+    display: inline;
+    padding-bottom: 14px;   
+    padding-top: 14px;
+    margin-top: 10px;
+}

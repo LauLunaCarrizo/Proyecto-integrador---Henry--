@@ -1,0 +1,14 @@
+.App {
+   text-align: center;
+   background-color: #E1CBD7;
+}
+.Cards{
+   background-color: #86A8CF;
+}
+.Card{
+   display:inline-block;
+   padding-left: 10px;
+   padding-right: 10px;
+   height: 500px;
+   
+}

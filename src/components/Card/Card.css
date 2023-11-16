@@ -1,0 +1,22 @@
+.Card{
+    margin-bottom: 10px;
+    margin-top: 15px;
+    margin-left: 10px;
+    margin-right: 10px ;
+    width: 250px;
+    height: 460px;
+    background-color: #E1CBD7;
+    border-radius: 15px;
+    border-color: black;
+    border-style: groove;
+    
+}
+
+
+.image{
+    height: 200px;
+    width: 200px;
+    border-radius: 15px;
+    border-color: black;
+    border-style: groove;
+}

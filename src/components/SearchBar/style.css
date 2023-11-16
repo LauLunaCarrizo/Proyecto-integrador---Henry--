@@ -1,0 +1,13 @@
+
+.SearchBar{
+    background-color: rgb(35, 42, 141);
+    padding-bottom: 14px;   
+    padding-top: 14px;
+    border-color: rgb(99, 93, 93);
+    border-style: groove;
+}
+
+.Agregar{
+    font-size: medium;
+    background-color: #C38EB4;
+}
