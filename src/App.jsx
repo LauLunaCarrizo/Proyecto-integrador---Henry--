@@ -1,7 +1,7 @@
 import './App.css';
 import React, { useEffect } from "react"
 import axios from 'axios';
-import {Routes, Route, useNavigate} from "react-router-dom"
+import {Routes, Route, useNavigate, useLocation} from "react-router-dom"
 import About from './components/About.jsx'
 import Nav from './components/Nav/Nav.jsx'
 import Cards from './components/Cards/Cards.jsx'
@@ -14,15 +14,22 @@ function App() {
 
    const [access, setAccess] = React.useState(false);
    let EMAIL = "lautaropp03@outlook.com"
-   let PASSWORD = "contraDeEjemplo"
-
+   let PASSWORD = "contra12"
    const navigate = useNavigate();
+   const location = useLocation()
+
 
    function login(userData) {
       if (userData.password === PASSWORD && userData.email === EMAIL) {
          setAccess(true);
          navigate('/home');
+      }else{
+         alert("Credenciales incorrectas")
       }
+   }
+
+   function logOut(){
+      setAccess(false)
    }
 
    useEffect(() => {
@@ -54,8 +61,9 @@ function App() {
    }
    return (
       <div className='App'>
-            <Nav onSearch={onSearch}/>
-            {/* <Cards onClose={onClose} characters={oldChars}></Cards> */}
+         {
+            location.pathname !== "/" && <Nav logout={logOut} onSearch={onSearch}/> 
+         }
          <Routes>
             <Route path="/home" element={<Cards onClose={onClose} characters={oldChars}></Cards>}></Route>
             <Route path="/about" element={<About></About>}></Route>

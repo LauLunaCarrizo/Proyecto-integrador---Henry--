@@ -14,8 +14,11 @@ return (
         <NavLink to="/about" style={({ isActive }) =>isActive ? {color:"lightcoral"} : null}>About</NavLink>
         </button>
         <button>
-        <NavLink to="/home" style={({ isActive }) =>isActive ? {color:"lightcoral"} : null}>Home</NavLink>
+        <NavLink to="/home" style={({ isActive }) =>isActive ? {color:"lightcoral"} : null}>🏠 Home 🏠</NavLink>
         </button>
+        <button 
+        onClick={props.logout}
+        >❌ Log Out ❌</button>
     </div>
 )
 }
