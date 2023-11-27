@@ -11,6 +11,9 @@ return (
         </div>
         <SearchBar onSearch={props.onSearch} />
         <button>
+            <NavLink to="/favorites" style={({ isActive }) =>isActive ? {color:"lightcoral"} : null}>Favorites</NavLink>
+        </button>
+        <button>
         <NavLink to="/about" style={({ isActive }) =>isActive ? {color:"lightcoral"} : null}>About</NavLink>
         </button>
         <button>

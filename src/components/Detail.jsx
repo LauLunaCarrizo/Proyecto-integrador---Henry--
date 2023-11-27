@@ -1,6 +1,5 @@
 import axios from 'axios'
 import {useParams} from 'react-router-dom'
-import { useState } from 'react';
 import React from 'react';
 
 export default function Detail(props) {
@@ -25,7 +24,6 @@ export default function Detail(props) {
 		<div style={{ height:"300px", width:"600px", textAlign:"center"}}>
 			<div>
 			<h2>{character.name}</h2>
-			
 			<h2>{character.status}</h2>
 			<h2>{character.species}</h2>
 			<h2>{character.gender}</h2>

@@ -8,6 +8,9 @@ import Cards from './components/Cards/Cards.jsx'
 import Detail from './components/Detail.jsx'
 import NotFound from './components/NotFound/NotFound.jsx';
 import Form from './components/Form/Form.jsx';
+import Favorites from './components/favorites/favorites.jsx';
+
+
 function App() {
 
    const [oldChars, setCharacters] = React.useState([]);
@@ -45,13 +48,14 @@ function App() {
       axios(`https://rickandmortyapi.com/api/character/${id}?key={pi-laulunacarrizo}`).then(
          ({ data }) => {
             if (data.name) {
-               setCharacters((oldChars) => [...oldChars, data]);
+               setCharacters((oldChars) => [...oldChars, data]); 
             } else {
                window.alert('¡No hay personajes con este ID!');
             }
          }
       );
    }
+
    const onClose = (id) => {
       setCharacters(
          oldChars.filter((char)=>{
@@ -59,6 +63,7 @@ function App() {
          })
       )
    }
+
    return (
       <div className='App'>
          {
@@ -68,6 +73,7 @@ function App() {
             <Route path="/home" element={<Cards onClose={onClose} characters={oldChars}></Cards>}></Route>
             <Route path="/about" element={<About></About>}></Route>
             <Route path="/detail/:id" element={<Detail></Detail>}></Route>
+            <Route path='/favorites' element={<Favorites onClose={onClose}></Favorites>}></Route>
             <Route path='*' element={<NotFound></NotFound>}></Route>
             <Route path='/' element={<Form login={login}></Form>}></Route>
          </Routes>

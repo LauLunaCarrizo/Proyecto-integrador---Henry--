@@ -64,8 +64,5 @@ export default function Form(props){
         >Submit</button>
         </form>
     </div>
-
     )
-
-    
 }
