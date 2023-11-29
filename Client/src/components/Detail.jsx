@@ -9,7 +9,7 @@ export default function Detail(props) {
 	const [character, setCharacter] = React.useState({});
 
 	React.useEffect(() => {
-		axios(`https://rickandmortyapi.com/api/character/${id}?key={pi-laulunacarrizo}`).then(
+		axios(`http://localhost:3001/rickandmorty/character/${id}`).then(
 		   ({ data }) => {
 			  if (data.name) {
 				 setCharacter(data);
