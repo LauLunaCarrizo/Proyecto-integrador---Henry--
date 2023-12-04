@@ -8,7 +8,7 @@ import Cards from './components/Cards/Cards.jsx'
 import Detail from './components/Detail.jsx'
 import NotFound from './components/NotFound/NotFound.jsx';
 import Form from './components/Form/Form.jsx';
-import Favorites from './components/favorites/favorites.jsx';
+import Favorites from './components/Favorites/Favorites.jsx';
 
 
 function App() {
@@ -16,19 +16,18 @@ function App() {
    const [oldChars, setCharacters] = React.useState([]);
 
    const [access, setAccess] = React.useState(false);
-   let EMAIL = "lautaropp03@outlook.com"
-   let PASSWORD = "contra12"
    const navigate = useNavigate();
    const location = useLocation()
 
 
    function login(userData) {
-      if (userData.password === PASSWORD && userData.email === EMAIL) {
-         setAccess(true);
-         navigate('/home');
-      }else{
-         alert("Credenciales incorrectas")
-      }
+      const { email, password } = userData;
+      const URL = 'http://localhost:3001/rickandmorty/login/';
+      axios(URL + `?email=${email}&password=${password}`).then(({ data }) => {
+         const { access } = data;
+         setAccess(data);
+         !access && navigate('/home');
+      });
    }
 
    function logOut(){

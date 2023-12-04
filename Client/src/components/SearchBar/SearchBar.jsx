@@ -1,7 +1,7 @@
 import './style.css'
 import {useState} from 'react';
 function SearchBar(props) {
-   // console.log(props)
+   
    const [id, setId] = useState("");
    const handleChange = (event) => {
       setId(event.target.value)

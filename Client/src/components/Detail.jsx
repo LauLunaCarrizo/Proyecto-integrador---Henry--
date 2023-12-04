@@ -21,7 +21,7 @@ export default function Detail(props) {
 		return setCharacter({});
 	 },[id]);
 	return (
-		<div style={{ height:"300px", width:"600px", textAlign:"center"}}>
+		<div style={{ height:"300px", width:"600px"}}>
 			<div>
 			<h2>{character.name}</h2>
 			<h2>{character.status}</h2>

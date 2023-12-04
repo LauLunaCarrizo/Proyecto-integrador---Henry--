@@ -1,6 +1,5 @@
 import { useState } from "react"
 import {validation} from "../../utils/validation"
-import { useNavigate } from "react-router-dom"
 
 export default function Form(props){
 // console.log(props)
@@ -25,8 +24,6 @@ export default function Form(props){
         }))
     }
 
-    const func = props
-    // console.log(func)
     const handleSubmit = (evento) => {
         evento.preventDefault();
         props.login(userData);

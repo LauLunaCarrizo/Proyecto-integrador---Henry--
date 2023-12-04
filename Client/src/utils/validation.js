@@ -14,8 +14,3 @@ export function validation(inputs){
     if(inputs.password.length > 10) errors.password = "su contraseña debe tener maximo 10 caracteres"
     return errors
 }
-
-console.log(validation({
-    email:"a@a.a",
-    password:"1234dqww54"
-}))

@@ -1,21 +1,25 @@
-const http = require("http")
-const fs = require("fs")
-const data = require("./utils/data")
+const express = require('express');
+const Router = require("./routes/index")
+const server = express();
+const PORT = 3001;
 
-const PORT = 3001
+server.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Credentials', 'true');
+  res.header(
+     'Access-Control-Allow-Headers',
+     'Origin, X-Requested-With, Content-Type, Accept'
+  );
+  res.header(
+     'Access-Control-Allow-Methods',
+     'GET, POST, OPTIONS, PUT, DELETE'
+  );
+  next();
+});
 
-http.createServer((req,res)=>{
-    res.setHeader('Access-Control-Allow-Origin', '*');
-    if(req.url.includes("/rickandmorty/character")){
-        let searchIdUrl = req.url.split('/')
-        let id = parseInt(searchIdUrl[searchIdUrl.length -1])
-        let newObj
-        let searchId = data.filter((element)=>{
-            if(element.id === id){
-                return  newObj = element
-            }
-        })
-        res.writeHead(200, {'Content-Type':'application/json'})
-        res.end(JSON.stringify(newObj))
-    }
-}).listen(PORT,  'localhost');
+server.use(express.json())
+server.use("/rickandmorty",Router)
+
+server.listen(PORT, () => {
+   console.log('Server raised in port: ' + PORT);
+});

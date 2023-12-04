@@ -3,7 +3,6 @@ import React from "react";
 import Card from "../Card/Card";
 import { filterCards, orderCards } from "../../redux/action";
 export default function Favorites({onClose}) {
-  console.log(onClose)
   const myFavorites = useSelector(state => state.myFavorites)
 
   const dispatch = useDispatch()
@@ -24,7 +23,7 @@ export default function Favorites({onClose}) {
       <option value="D">Descendente</option>
       </select>  
       <select name="filter" onChange={handleFilter}>
-        <option value="All">All</option>
+        <option value="ALL">All</option>
         <option value="Male">Male</option>
         <option value="Female">Female</option>
         <option value="Genderless">Genderless</option>
