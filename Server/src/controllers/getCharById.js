@@ -1,10 +1,10 @@
 const axios = require("axios")
 
-const getCharById =(req,res)=>{
+const getCharById = async (req,res) => {
+try {
   let id = req.params.id
-  axios(`https://rickandmortyapi.com/api/character/${id}?key={laulunacarrizo}`)
-  .then(({data})=>{
-    data 
+  const {data} = await axios(`https://rickandmortyapi.com/api/character/${id}?key={laulunacarrizo}`)
+  data 
     ? res.json(
       {
         id:data.id,
@@ -17,11 +17,9 @@ const getCharById =(req,res)=>{
       }
     )
     : res.status(400).json({message: "Not Found"})
-  })
-  .catch((error)=>
-    res.send(500,{message: error})
-  )
+} catch (error) {
+  res.send(500,{message: error})
+}
 }
 
 module.exports = getCharById;
-
