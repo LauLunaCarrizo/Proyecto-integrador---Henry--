@@ -46,8 +46,7 @@ function App() {
 
    async function onSearch(id) {
       try {
-         const characterId = oldChars.filter(char => char.id ===Number(id)
-      )
+         const characterId = oldChars.filter(char => char.id === Number(id))
       if(characterId.length){
          return alert( `${characterId[0].name} ya existe ` )
       }
